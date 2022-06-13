@@ -21,7 +21,7 @@ public class Wall implements Structure {
 
 
     public Optional findBlockByColor(String color) {
-        for (Block block:blocks) {
+        for (Block block : blocks) {
 
             if (block.getColor().equals(color)) {
                 return Optional.ofNullable(block);
@@ -33,8 +33,8 @@ public class Wall implements Structure {
 
 
     public List findBlocksByMaterial(String material) {
-        ArrayList<Block> blocksByMaterial = new ArrayList<>();
-        for (Block block:blocks) {
+        ArrayList<Block> blocksByMaterial = new ArrayList<Block>();
+        for (Block block : blocks) {
             if (block.getMaterial().equals(material)) {
                 blocksByMaterial.add(block);
             }
