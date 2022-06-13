@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,25 +21,22 @@ public class Wall implements Structure {
 
 
     public Optional findBlockByColor(String color) {
-        for (int i = 0; i < blocks.size(); i++) {
+        for (Block block:blocks) {
 
-            if (blocks.get(i).getColor().equals(color)) {
-                return Optional.ofNullable(blocks.get(i));
+            if (block.getColor().equals(color)) {
+                return Optional.ofNullable(block);
             }
 
-            if (blocks.get(i) instanceof Block) {
-
-            }
         }
-        return Optional.ofNullable(null);
+        return Optional.empty();
     }
 
 
     public List findBlocksByMaterial(String material) {
-        List<Block> blocksByMaterial = null;
-        for (int i = 0; i < blocks.size(); i++) {
-            if (blocks.get(i).getMaterial().equals(material)) {
-                blocksByMaterial.add(blocks.get(i));
+        ArrayList<Block> blocksByMaterial = new ArrayList<>();
+        for (Block block:blocks) {
+            if (block.getMaterial().equals(material)) {
+                blocksByMaterial.add(block);
             }
         }
         return blocksByMaterial;
